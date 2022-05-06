@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let data ={
+        //     username:'ck',
+        //     age:22
+        // }
+        // let obj = {}
+        // for(let item in data){
+        //     Object.defineProperty(obj,item,{
+        //         get(){
+        //             console.log('get');
+        //             return data[item]
+        //         },
+        //         set(newValue){
+        //             console.log('set',newValue);
+        //         }
+        //     })
+        // }
+        // console.log(obj);
+        // obj.username = '陈康'
+        // console.log(obj.username);
+        let testArray = [0,1,2];
+        function test(data, key, val) {
+            Object.defineProperty(data, key, {
+                get() {
+                    console.log(val);
+                },
+                set(newV) {
+                    if (newV !== val) {
+                        val = newV;
+                        console.log('检测到变更');
+                    }
+                },
+            });
+        }
+        test(testArray, 0);
+        test(testArray, 1);
+        test(testArray, 2);
+        testArray[0] = 1
+        testArray[1] = 10
+        testArray[2] = 20
+        testArray.length = 10
+        console.log(testArray);
+    </script>
+</body>
+
+</html>

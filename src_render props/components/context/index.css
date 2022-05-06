@@ -1,0 +1,12 @@
+.parent{
+    background-color: skyblue;
+    padding: 10px;
+}
+.child{
+    background-color: rgb(143, 120, 45);
+    padding: 10px;
+}
+.son{
+    background-color: pink;
+    padding: 10px;
+}
